@@ -1,0 +1,24 @@
+# General settings
+experiment:
+  name: "markov_chain_learning simplified"
+  description: "Generating sequences using a Markov chain model and learning the transition matrix"
+
+# Markov Chain parameters
+data_settings:
+  seed: 0  # Random seed for reproducibility
+  D: 10  # token embedding dim
+  num_states: 10  # Number of states
+  num_steps: 1000  # Number of steps to generate
+  alpha: 1.  # Dirichlet prior for transition matrix
+
+# learning parameters
+learning:
+  mode: "mlp"
+  lr: 0.001
+    # Learning rate for optimizer
+  batch_size: 512  # Batch size for training
+  d: 10  # query/key dim
+  num_iters: 100000  # Number of epochs to train
+  save_checkpoint_frequency: 100  # Save training progress every N steps
+  save_path: "/mnt/data_storage/InContextLearning/reduce/"
+  save_format: "pkl"  # Options: txt, json, csv
